@@ -8,6 +8,7 @@
 | Docs | https://www.kousenit.com/reactivespring/ |  
 | Property to YAML | https://www.javainuse.com/app2yaml |  
 | Free restful service | http://open-notify.org/ |  
+| Accessing the Web through a proxy | https://docs.gradle.org/current/userguide/build_environment.html#sec:accessing_the_web_via_a_proxy |  
 
 #### Pros
 Scalability  
