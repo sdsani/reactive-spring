@@ -16,3 +16,7 @@ Error handelling
 
 #### Example  
 Fast food resturent - Incoming orders  
+
+#### Github login fix
+https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/  
+
