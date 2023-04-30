@@ -2,23 +2,26 @@ package com.shahkaar.asynchronouslywebclient.service;
 
 import com.shahkaar.asynchronouslywebclient.json.AstroResponse;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 @Service
 public class AstroService {
 
-	private final RestTemplate restTemplate;
-	
-	AstroService(RestTemplateBuilder builder) {
-		this.restTemplate = builder.build();
-	}
-	
-	public String getPeopleInSpace() {
-		return restTemplate.getForObject("http://api.open-notify.org/astros.json", String.class);
-	}
+	private final WebClient client;
 
-	public AstroResponse getPeopleInSpaceData() {
-		return restTemplate.getForObject("http://api.open-notify.org/astros.json", AstroResponse.class);
+	AstroService() {
+		this.client = WebClient.create("http://api.open-notify.org");
+	}
+	
+	public Mono<AstroResponse> getPeopleInSpaceData() {
+		return client.get()
+				.uri("/astros.json")
+				.accept(MediaType.APPLICATION_JSON)
+				.retrieve()
+				.bodyToMono(AstroResponse.class)
+				.log();
 	}
 }

@@ -6,3 +6,13 @@ Docs: https://www.kousenit.com/reactivespring/
 Property to YAML: https://www.javainuse.com/app2yaml
 Free restful service: http://open-notify.org/
 
+#### Pros
+Scalability  
+Non blocking requests  
+
+#### Cons
+Complex  
+Error handelling  
+
+#### Example  
+Fast food resturent - Incoming orders  
